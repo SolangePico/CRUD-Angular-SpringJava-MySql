@@ -21,8 +21,8 @@
                         <td>{{articulo.nombreArticulo}}</td>
                         <td>{{articulo.precioUnitarioArticulo}}</td>
                         <td>
-                            <a class="btn btn-warning">Editar</a>
-                            <a class="btn btn-danger" style="margin-left: 10px;">Eliminar</a>
+                            <a (click)="editarArticulo(articulo)" class="btn btn-warning">Editar</a>
+                            <a (click)="eliminarArticulo(articulo)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</a>
                         </td>
                     </tr>
                 </tbody>

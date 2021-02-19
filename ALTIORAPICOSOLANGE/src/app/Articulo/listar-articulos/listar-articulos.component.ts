@@ -20,4 +20,17 @@ export class ListarArticulosComponent implements OnInit {
       })
   }
 
+  editarArticulo(articulo: Articulo): void {
+    localStorage.setItem("code", articulo.codeArticulo.toString());
+    this.router.navigate(["editarArticulo"]);
+  }
+
+  eliminarArticulo(articulo: Articulo) {
+    this.service.eliminarArticulo(articulo)
+      .subscribe(data => {
+        this.articulos = this.articulos.filter(p => p !== articulo);
+        alert("Cliente Eliminado");
+      })
+  }
+
 }

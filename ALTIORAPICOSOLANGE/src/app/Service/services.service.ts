@@ -42,4 +42,16 @@ export class ServicesService {
   crearArticulo(articulo: Articulo) {
     return this.http.post<Articulo>(this.UrlA, articulo);
   }
+
+  getArticuloCode(code: number) {
+    return this.http.get<Articulo>(this.UrlA + "/" + code);
+  }
+
+  actualizarArticulo(articulo: Articulo) {
+    return this.http.put<Articulo>(this.UrlA + "/" + articulo.codeArticulo, articulo);
+  }
+
+  eliminarArticulo(articulo: Articulo) {
+    return this.http.delete<Articulo>(this.UrlA + "/" + articulo.codeArticulo);
+  }
 }
