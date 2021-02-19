@@ -13,6 +13,9 @@ import { EditarArticuloComponent } from './Articulo/editar-articulo/editar-artic
 import { EliminarArticuloComponent } from './Articulo/eliminar-articulo/eliminar-articulo.component';
 import { ListarOrdenesComponent } from './Orden/listar-ordenes/listar-ordenes.component';
 import { CrearOrdenComponent } from './Orden/crear-orden/crear-orden.component';
+import { FormsModule } from '@angular/forms';
+import { ServicesService } from './Service/services.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,9 +33,11 @@ import { CrearOrdenComponent } from './Orden/crear-orden/crear-orden.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
