@@ -38,4 +38,8 @@ export class ServicesService {
   getListarArticulos() {
     return this.http.get<Articulo[]>(this.UrlA);
   }
+
+  crearArticulo(articulo: Articulo) {
+    return this.http.post<Articulo>(this.UrlA, articulo);
+  }
 }

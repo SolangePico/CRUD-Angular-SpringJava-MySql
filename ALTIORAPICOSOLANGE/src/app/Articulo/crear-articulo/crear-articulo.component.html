@@ -1,1 +1,27 @@
-<p>crear-articulo works!</p>
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Artículo</h3>
+        </div>
+        <div class="card-body">
+          <form action="">
+            <div class="form-group"> 
+                <label for="">Código de Barras: </label>
+                <input type="text" class="form-control" [(ngModel)]="art.barCodeArticulo" name="barCodeArticulo">
+            </div>
+            <br>
+            <div class="form-group"> 
+                <label for="">Nombre: </label>
+                <input type="text" class="form-control" [(ngModel)]="art.nombreArticulo" name="nombreArticulo">
+            </div>
+            <br>
+            <div class="form-group"> 
+                <label for="">Precio Unitario: </label>
+                <input type="number" class="form-control" [(ngModel)]="art.precioUnitarioArticulo" name="precioUnitarioArticulo">
+            </div>
+            <br>
+            <button (click)="crearArticulo()" class="btn btn-danger">Guardar</button>
+          </form>
+        </div>
+    </div>
+</div>
