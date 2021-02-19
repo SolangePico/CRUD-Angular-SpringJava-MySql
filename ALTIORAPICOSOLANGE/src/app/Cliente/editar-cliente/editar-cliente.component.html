@@ -1,1 +1,27 @@
-<p>editar-cliente works!</p>
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Actualizar Cliente</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Código: </label>
+                    <input readonly type="text" class="form-control" [(ngModel)]="cli.idCliente" name="idCliente">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Nombre: </label>
+                    <input type="text" class="form-control" [(ngModel)]="cli.nombreCliente" name="nombreCliente">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Apellido: </label>
+                    <input type="text" class="form-control" [(ngModel)]="cli.apellidoCliente" name="apellidoCliente">
+                </div>
+                <br>
+                <button (click)="actualizarCliente()" class="btn btn-danger">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

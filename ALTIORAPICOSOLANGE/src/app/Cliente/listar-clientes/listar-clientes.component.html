@@ -21,8 +21,9 @@
                         <td>{{cliente.nombreCliente}}</td>
                         <td>{{cliente.apellidoCliente}}</td>
                         <td>
-                            <a class="btn btn-warning">Editar</a>
-                            <a class="btn btn-danger" style="margin-left: 10px;">Eliminar</a>
+                            <a (click)="editarCliente(cliente)" class="btn btn-warning">Editar</a>
+                            <a (click)="eliminarCliente(cliente)" class="btn btn-danger"
+                                style="margin-left: 10px;">Eliminar</a>
                         </td>
                     </tr>
                 </tbody>

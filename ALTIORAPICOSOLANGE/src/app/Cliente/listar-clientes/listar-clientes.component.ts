@@ -15,9 +15,21 @@ export class ListarClientesComponent implements OnInit {
 
   ngOnInit() {
     this.service.getListarClientes()
-    .subscribe((data:Cliente[]) =>{
-      this.clientes=data;
-    })
+      .subscribe((data: Cliente[]) => {
+        this.clientes = data;
+      })
   }
 
+  editarCliente(cliente: Cliente): void {
+    localStorage.setItem("code", cliente.codeCliente.toString());
+    this.router.navigate(["editarCliente"]);
+  }
+
+  eliminarCliente(cliente: Cliente) {
+    this.service.eliminarCliente(cliente)
+      .subscribe(data => {
+        this.clientes = this.clientes.filter(p => p !== cliente);
+        alert("Cliente Eliminado");
+      })
+  }
 }
