@@ -8,7 +8,8 @@
                     </div>
                     <div class="form-group d-flex">
                         <div class="col-sm-6 d-flex">
-                            <input type="text" class="form-control" placeholder="Código" [(ngModel)]="cli.idCliente" name="idCliente">
+                            <input type="text" class="form-control" placeholder="Código" [(ngModel)]="cli.idCliente"
+                                name="idCliente">
                             <button (click)="buscarCliente()" class="btn btn-outline-info">Buscar</button>
                         </div>
                         <div class="col-sm-2 d-flex">
@@ -18,13 +19,15 @@
                     <br>
                     <div class="form-group d-flex">
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="cli.nombreCliente" name="nombreCliente" readonly>
+                            <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="cli.nombreCliente"
+                                name="nombreCliente" readonly>
                         </div>
                     </div>
                     <br>
                     <div class="form-group d-flex">
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" placeholder="Apellido" [(ngModel)]="cli.apellidoCliente" name="apellidoCliente" readonly>
+                            <input type="text" class="form-control" placeholder="Apellido"
+                                [(ngModel)]="cli.apellidoCliente" name="apellidoCliente" readonly>
                         </div>
                     </div>
                     <br>
@@ -33,7 +36,8 @@
                     </div>
                     <div class="form-group d-flex">
                         <div class="col-sm-6 d-flex">
-                            <input type="text" class="form-control" placeholder="Código Barras" [(ngModel)]="art.barCodeArticulo" name="barCodeArticulo">
+                            <input type="text" class="form-control" placeholder="Código Barras"
+                                [(ngModel)]="art.barCodeArticulo" name="barCodeArticulo">
                             <button (click)="buscarArticulo()" class="btn btn-outline-info">Buscar</button>
                         </div>
                         <div class="col-sm-2 d-flex">
@@ -43,19 +47,20 @@
                     <br>
                     <div class="form-group d-flex">
                         <div class="col-sm-6 d-flex">
-                            <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="art.nombreArticulo" name="nombreArticulo" readonly>
+                            <input type="text" class="form-control" placeholder="Nombre"
+                                [(ngModel)]="art.nombreArticulo" name="nombreArticulo" readonly>
                         </div>
                     </div>
                     <br>
                     <div>
                         <div class="col-sm-3 d-flex">
-                            <input type="text" class="form-control" placeholder="Precio" [(ngModel)]="art.precioUnitarioArticulo" name="precioUnitarioArticulo" readonly>
+                            <input type="text" class="form-control" placeholder="Precio"
+                                [(ngModel)]="art.precioUnitarioArticulo" name="precioUnitarioArticulo" readonly>
                         </div>
                     </div>
                     <br>
                     <div class="form-group">
-                        <button type="submit" name="accion" value="Agregar"
-                            class="btn btn-outline-info">Agregar</button>
+                        <button (click)="agregarArticulo()" class="btn btn-outline-info">Agregar</button>
                     </div>
                 </div>
             </form>
@@ -66,7 +71,7 @@
             <div class="card-body">
                 <div class="d-flex col-sm-5 ml-auto">
                     <label>Número Orden: </label>
-                    <input type="text" name="numeroOrden" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="numeroOrden" name="numeroOrden" readonly>
                 </div>
                 <table class="table table-hover">
                     <thead>
@@ -79,23 +84,19 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td style="visibility:hidden;"></td>
-
+                        <tr *ngFor="let ordenArt of ordenArticulos; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{ordenArt.barCodeArticulo}}</td>
+                            <td>{{ordenArt.nombreArticulo}}</td>
+                            <td>{{ordenArt.precioUnitarioArticulo}}</td>
+                            <td style="visibility:hidden;"> {{ordenArt.codeArticulo}}</td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
             <div class="card-footer d-flex">
                 <div class="col-sm-6">
-                    <a class="btn btn-success">Generar Orden</a>
-                    <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
+                    <button (click)="crearOrden()" class="btn btn-success">Generar Orden</button>
                 </div>
             </div>
         </div>
