@@ -54,4 +54,13 @@ export class ServicesService {
   eliminarArticulo(articulo: Articulo) {
     return this.http.delete<Articulo>(this.UrlA + "/" + articulo.codeArticulo);
   }
+
+  //Servicios de Orden
+  getClienteId(id: String) {
+    return this.http.get<Cliente>(this.Url + "/code/" + id);
+  }
+
+  getArticuloCodeBarras(barCode: String) {
+    return this.http.get<Articulo>(this.UrlA + "/code/" + barCode);
+  }
 }
