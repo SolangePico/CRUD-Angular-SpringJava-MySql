@@ -1,1 +1,67 @@
-<p>listar-ordenes works!</p>
+<div class="d-flex">
+    <div class="col-sm-5">
+        <div class="card">
+            <form action="">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Datos del Cliente:</label>
+                    </div>
+                    <div class="form-group d-flex">
+                        <div class="col-sm-6 d-flex">
+                            <input type="text" class="form-control" placeholder="Código" [(ngModel)]="cli.idCliente"
+                                name="idCliente">
+                            <button (click)="buscarCliente()" class="btn btn-outline-info">Buscar</button>
+                        </div>
+                        <div class="col-sm-2 d-flex">
+                            <input class="form-control" [(ngModel)]="cli.codeCliente" name="codeCliente">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group d-flex">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="cli.nombreCliente"
+                                name="nombreCliente" readonly>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group d-flex">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="Apellido"
+                                [(ngModel)]="cli.apellidoCliente" name="apellidoCliente" readonly>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button (click)="listarOrdenes()" class="btn btn-outline-info">Buscar Ordenes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Número de Orden</th>
+                            <th>Nombre del Cliente</th>
+                            <th>Código de Barras</th>
+                            <th>Descripción</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let orde of ordenes" class="text-left">
+                            <td>{{orde.numeroOrden}}</td>
+                            <td>{{orde.nombreCliente}}</td>
+                            <td>{{orde.barCodeArticulo}}</td>
+                            <td>{{orde.nombreArticulo}}</td> 
+                            <td>{{orde.fechaOrden}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

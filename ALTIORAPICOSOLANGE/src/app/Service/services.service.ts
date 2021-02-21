@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Cliente } from '../Modelo/Cliente';
 import { Articulo } from '../Modelo/Articulo';
 import { Orden } from '../Modelo/Orden';
+import { OrdenByCliente } from '../Modelo/OrdenByCliente';
 
 @Injectable({
   providedIn: 'root'
@@ -68,5 +69,9 @@ export class ServicesService {
 
   crearOrden(orden: Orden) {
     return this.http.post<Orden>(this.UrlO, orden);
+  }
+
+  getListarOrdenes(codeCli: number) {
+    return this.http.get<OrdenByCliente[]>(this.UrlO + "/" + codeCli);
   }
 }
