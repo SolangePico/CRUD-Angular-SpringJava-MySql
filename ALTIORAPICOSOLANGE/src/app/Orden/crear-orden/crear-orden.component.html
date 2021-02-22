@@ -13,7 +13,7 @@
                             <button (click)="buscarCliente()" class="btn btn-outline-info">Buscar</button>
                         </div>
                         <div class="col-sm-2 d-flex">
-                            <input class="form-control" [(ngModel)]="cli.codeCliente" name="codeCliente">
+                            <input type="hidden" class="form-control" [(ngModel)]="cli.codeCliente" name="codeCliente">
                         </div>
                     </div>
                     <br>
@@ -41,7 +41,7 @@
                             <button (click)="buscarArticulo()" class="btn btn-outline-info">Buscar</button>
                         </div>
                         <div class="col-sm-2 d-flex">
-                            <input class="form-control" [(ngModel)]="art.codeArticulo" name="codeArticulo">
+                            <input type="hidden" class="form-control" [(ngModel)]="art.codeArticulo" name="codeArticulo">
                         </div>
                     </div>
                     <br>

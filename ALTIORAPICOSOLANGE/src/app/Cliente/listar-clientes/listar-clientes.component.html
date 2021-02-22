@@ -7,7 +7,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr class="text-center">
-                        <th>ID</th>
+                        <th style="visibility:hidden;">ID</th>
                         <th>Código</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
@@ -16,7 +16,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let cliente of clientes" class="text-center">
-                        <td>{{cliente.codeCliente}}</td>
+                        <td style="visibility:hidden;">{{cliente.codeCliente}}</td>
                         <td>{{cliente.idCliente}}</td>
                         <td>{{cliente.nombreCliente}}</td>
                         <td>{{cliente.apellidoCliente}}</td>
