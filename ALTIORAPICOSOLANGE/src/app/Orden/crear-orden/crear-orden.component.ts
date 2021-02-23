@@ -31,12 +31,17 @@ export class CrearOrdenComponent implements OnInit {
 
   buscarArticulo(): void {
     this.service.getArticuloCodeBarras(this.art.barCodeArticulo).subscribe(data => {
-      this.art = data;
+      console.log("data", data);
+      this.art = {...data};
     })
   }
 
   agregarArticulo(){
-    this.ordenArticulos.push({...this.art}); //creo un nuevo espacio en memoria 
+    if(this.art.stockAVender > this.art.stockArticulo){
+      alert("No se puede vender mas del stock actual.")
+    } else {
+      this.ordenArticulos.push({...this.art}); //creo un nuevo espacio en memoria 
+    } 
   }
 
   crearOrden(){

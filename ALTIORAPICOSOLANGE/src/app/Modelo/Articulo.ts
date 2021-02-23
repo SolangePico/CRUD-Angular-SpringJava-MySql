@@ -3,4 +3,6 @@ export class Articulo {
     barCodeArticulo: String;
     nombreArticulo: String;
     precioUnitarioArticulo: number;
+    stockArticulo: number;
+    stockAVender?: number;
 }

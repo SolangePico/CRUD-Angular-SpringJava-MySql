@@ -41,7 +41,8 @@
                             <button (click)="buscarArticulo()" class="btn btn-outline-info">Buscar</button>
                         </div>
                         <div class="col-sm-2 d-flex">
-                            <input type="hidden" class="form-control" [(ngModel)]="art.codeArticulo" name="codeArticulo">
+                            <input type="hidden" class="form-control" [(ngModel)]="art.codeArticulo"
+                                name="codeArticulo">
                         </div>
                     </div>
                     <br>
@@ -56,6 +57,18 @@
                         <div class="col-sm-3 d-flex">
                             <input type="text" class="form-control" placeholder="Precio"
                                 [(ngModel)]="art.precioUnitarioArticulo" name="precioUnitarioArticulo" readonly>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Stock Disponible:</label>
+                        <div class="col-sm-3 d-flex">
+                            <input type="text" class="form-control" placeholder="Stock Disponible"
+                                [(ngModel)]="art.stockArticulo" name="stockArticulo" readonly>
+                        </div>
+                        <label>Stock a Vender:</label>
+                        <div class="col-sm-3 d-flex">
+                            <input type="number" class="form-control" placeholder="Stock a Vender"
+                                [(ngModel)]="art.stockAVender" name="stockAVender">
                         </div>
                     </div>
                     <br>
@@ -80,6 +93,7 @@
                             <th>Código Barras</th>
                             <th>Descripción</th>
                             <th>Precio</th>
+                            <th>Cantidad</th>
                             <th style="visibility:hidden;">CodigoArticulo</th>
                         </tr>
                     </thead>
@@ -89,6 +103,7 @@
                             <td>{{ordenArt.barCodeArticulo}}</td>
                             <td>{{ordenArt.nombreArticulo}}</td>
                             <td>{{ordenArt.precioUnitarioArticulo}}</td>
+                            <td>{{ordenArt.stockAVender}}</td>
                             <td style="visibility:hidden;"> {{ordenArt.codeArticulo}}</td>
                         </tr>
                     </tbody>
